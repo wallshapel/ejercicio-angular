@@ -1,59 +1,73 @@
-# Frontend
+# 🚀 Angular User List App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+Un ejercicio práctico en **Angular 20** que demuestra:
+- 📝 Listado de usuarios desde la API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+- 🔍 Filtro de búsqueda en vivo con `ngModel`
+- 📱 Diseño responsive (móvil 📱, tablet 📟 y desktop 💻)
+- 🎨 Angular Material para UI
+- ✅ Tests unitarios completos con **Jasmine + Karma**
+- 🧹 Análisis de código con **ESLint**
+- 🐳 Docker y Docker Compose listos para ejecutar
 
-## Development server
+---
 
-To start a local development server, run:
-
-```bash
-ng serve
+## 📂 Estructura principal
+```
+frontend/
+ ├─ src/app/features/users
+ │   ├─ data-access/   # Servicio (UserService)
+ │   ├─ ui/            # Filtro (UserFilterComponent)
+ │   └─ user-list/     # Lista de usuarios (UserListComponent)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ▶️ Cómo correr la app
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🔧 Requisitos
+- Node.js 20+
+- Angular CLI 20+
+- (Opcional) Docker + Docker Compose
 
+### 👨‍💻 Desarrollo local
 ```bash
-ng generate component component-name
+npm install
+npm start
+```
+La app correrá en 👉 [http://localhost:4200](http://localhost:4200)
+
+---
+
+## 🧪 Tests con cobertura
+Ejecuta todos los tests y genera un reporte de cobertura:
+```bash
+ng test --watch=false --code-coverage
+```
+📊 El reporte se genera en `coverage/index.html`.
+
+---
+
+## 🧹 Linter (análisis de código)
+Verifica calidad y buenas prácticas con:
+```bash
+npx eslint .
+```
+Para corregir automáticamente:
+```bash
+npx eslint . --fix
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
+## 🐳 Docker
+Ejecutar la app en contenedor (requiere Docker y Docker Compose instalados):
 ```bash
-ng generate --help
+docker compose up -d
 ```
+👉 App disponible en [http://localhost:8080](http://localhost:8080)
 
-## Building
+---
 
-To build the project run:
+## ✨ Conclusión
+Esta app es un **ejercicio completo en Angular** 🎯: frontend moderno con Angular Material, buenas prácticas de arquitectura, responsive design, tests unitarios con cobertura y despliegue en Docker.
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

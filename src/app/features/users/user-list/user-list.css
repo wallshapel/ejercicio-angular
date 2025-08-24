@@ -1,0 +1,136 @@
+/* Base */
+.user-list {
+    padding: 16px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.search-field {
+    width: min(420px, 100%);
+}
+
+/* Base table (desktop) */
+.users {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    /* Material appearance */
+    box-shadow: 0 1px 3px #0000001A;
+    border-radius: 6px;
+    overflow: hidden;
+    /* keeps the rounded shape */
+}
+
+.users th,
+.users td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #00000014;
+    text-align: left;
+    vertical-align: top;
+}
+
+.users thead th {
+    font-weight: 600;
+    background: #00000005;
+}
+
+/* Even and odd rows */
+.users .row-even {
+    background-color: #00000005;
+}
+
+.users .row-odd {
+    background-color: #fff;
+}
+
+/* ─────────────────────────────────────────────
+   Breakpoints
+   - Mobile:    <600px
+   - Tablet:    600px–959px
+   - Desktop:   ≥960px
+   ───────────────────────────────────────────── */
+
+/* Tablet: compact padding, slightly smaller typography */
+@media (min-width: 600px) and (max-width: 959.98px) {
+
+    .users th,
+    .users td {
+        padding: 8px 10px;
+        font-size: 0.95rem;
+    }
+
+    .search-field {
+        width: min(380px, 100%);
+    }
+}
+
+/* Mobile: convert rows into ‘cards’ and hide thread */
+@media (max-width: 599.98px) {
+    .toolbar {
+        margin-bottom: 16px;
+    }
+
+    /* Safe scrolling if there are overflows in external components */
+    .user-list {
+        padding: 12px;
+    }
+
+    .users {
+        border: 0;
+        box-shadow: none;
+        /* Remove shadows on mobile for a cleaner style */
+    }
+
+    .users thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .users tr {
+        display: block;
+        background: #00000005;
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 0 #0000000A;
+    }
+
+    .users td {
+        display: flex;
+        gap: 8px;
+        padding: 6px 0;
+        border-bottom: 0;
+        font-size: 0.95rem;
+    }
+
+    .users td::before {
+        content: attr(data-label);
+        flex: 0 0 40%;
+        opacity: 0.7;
+        font-weight: 500;
+    }
+
+    /* that the search field occupies the entire width */
+    .search-field {
+        width: 100%;
+    }
+}
+
+/* Desktop (≥960px): reforzar legibilidad */
+@media (min-width: 960px) {
+
+    .users th,
+    .users td {
+        padding: 12px 14px;
+    }
+}

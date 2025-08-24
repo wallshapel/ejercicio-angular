@@ -1,0 +1,31 @@
+<main class="user-list">
+
+    <div class="toolbar">
+        <app-user-filter (searchChange)="onSearch($event)"></app-user-filter>
+    </div>
+
+    <table class="users" aria-label="List of users">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>User</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of filteredUsers$ | async; trackBy: trackById; let isEven = even; let isOdd = odd"
+                [class.row-even]="isEven" [class.row-odd]="isOdd">
+                <td data-label="#"> {{ u.id }} </td>
+                <td data-label="Name"> {{ u.name }} </td>
+                <td data-label="User"> {{ u.username }} </td>
+                <td data-label="Email"> {{ u.email }} </td>
+                <td data-label="City"> {{ u.address?.city }} </td>
+                <td data-label="Company"> {{ u.company?.name }} </td>
+            </tr>
+        </tbody>
+
+    </table>
+</main>
