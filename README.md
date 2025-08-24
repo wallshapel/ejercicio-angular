@@ -35,7 +35,7 @@ frontend/
 ```bash
 git clone https://github.com/wallshapel/ejercicio-angular # Opcional si no se quiere descomprimir
 npm install
-npm start
+ng s -o
 ```
 La app correrá en 👉 [http://localhost:4200](http://localhost:4200)
 
