@@ -2,7 +2,7 @@
 
 Un ejercicio práctico en **Angular 20** que demuestra:
 - 📝 Listado de usuarios desde la API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
-- 🔍 Filtro de búsqueda en vivo con `ngModel`
+- 🔍 Filtro de búsqueda en vivo
 - 📱 Diseño responsive (móvil 📱, tablet 📟 y desktop 💻)
 - 🎨 Angular Material para UI
 - ✅ Tests unitarios completos con **Jasmine + Karma**
@@ -30,7 +30,10 @@ frontend/
 - (Opcional) Docker + Docker Compose
 
 ### 👨‍💻 Desarrollo local
+
+- Descomprimir
 ```bash
+git clone https://github.com/wallshapel/ejercicio-angular # Opcional si no se quiere descomprimir
 npm install
 npm start
 ```
