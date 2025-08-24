@@ -1,5 +1,5 @@
 <mat-form-field appearance="outline" class="search-field" floatLabel="always">
   <mat-label>Search by name</mat-label>
   <input matInput id="search" aria-label="Search for user by name" placeholder="Ex: John Doe" [(ngModel)]="search"
-    (ngModelChange)="onInput($event)" />
+    (ngModelChange)="onInput($event)" autofocus />
 </mat-form-field>
